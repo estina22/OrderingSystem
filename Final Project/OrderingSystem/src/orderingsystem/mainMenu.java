@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.util.*;
 import java.io.*;
 import java.text.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -24,6 +26,7 @@ public class mainMenu extends javax.swing.JFrame {
         drinkComboBox.setVisible(false);
         breakfastComboBox.setVisible(false);
         tacosComboBox.setVisible(false);
+        customizePanel.setVisible(false);
        
        
     }
@@ -39,13 +42,17 @@ public class mainMenu extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        menuPanel = new javax.swing.JPanel();
         drinkLbl = new javax.swing.JLabel();
         drinkComboBox = new javax.swing.JComboBox<>();
         breakfastLbl = new javax.swing.JLabel();
         breakfastComboBox = new javax.swing.JComboBox<>();
         tacosLbl = new javax.swing.JLabel();
         tacosComboBox = new javax.swing.JComboBox<>();
+        customizePanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        addBtn = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +82,11 @@ public class mainMenu extends javax.swing.JFrame {
         });
 
         breakfastComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Burrito", "Tacos" }));
+        breakfastComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                breakfastComboBoxActionPerformed(evt);
+            }
+        });
 
         tacosLbl.setText("Tacos");
         tacosLbl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -84,40 +96,81 @@ public class mainMenu extends javax.swing.JFrame {
         });
 
         tacosComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grilled Beef", "Grilled Chicken", "Pastor ", "Barbacoa" }));
+        tacosComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tacosComboBoxActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tacosLbl)
                     .addComponent(breakfastLbl)
                     .addComponent(drinkLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(breakfastComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(drinkComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tacosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(breakfastLbl)
                     .addComponent(breakfastComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tacosLbl)
                     .addComponent(tacosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(drinkComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(drinkLbl))
                 .addGap(44, 44, 44))
+        );
+
+        jLabel3.setText("Customize Panel");
+
+        addBtn.setText("Add to Cart");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
+
+        backBtn.setText("Reset");
+
+        javax.swing.GroupLayout customizePanelLayout = new javax.swing.GroupLayout(customizePanel);
+        customizePanel.setLayout(customizePanelLayout);
+        customizePanelLayout.setHorizontalGroup(
+            customizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(customizePanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(customizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(backBtn)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(addBtn)
+                .addGap(42, 42, 42))
+        );
+        customizePanelLayout.setVerticalGroup(
+            customizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(customizePanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(customizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addBtn)
+                    .addComponent(backBtn))
+                .addGap(29, 29, 29))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -133,8 +186,10 @@ public class mainMenu extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(351, Short.MAX_VALUE))
+                        .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(73, 73, 73)
+                        .addComponent(customizePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +199,9 @@ public class mainMenu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(43, 43, 43)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(customizePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
@@ -166,7 +223,13 @@ public class mainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_drinkLblMouseClicked
 
     private void drinkComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drinkComboBoxActionPerformed
-        // ignore
+        // 
+        if(drinkComboBox.getSelectedItem() == "Horchata" || drinkComboBox.getSelectedItem() == "Jamaica" ||
+                drinkComboBox.getSelectedItem() == "Sprite" || drinkComboBox.getSelectedItem() == "Coca-Cola")
+        {    
+            customizePanel.setVisible(true);
+        }
+        
     }//GEN-LAST:event_drinkComboBoxActionPerformed
 
     private void breakfastLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_breakfastLblMouseClicked
@@ -197,6 +260,35 @@ public class mainMenu extends javax.swing.JFrame {
             tacosComboBox.setVisible(true);  
     }//GEN-LAST:event_tacosLblMouseClicked
 
+    private void breakfastComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breakfastComboBoxActionPerformed
+        // TODO add your handling code here:
+        if(breakfastComboBox.getSelectedItem() == "Burrito" || breakfastComboBox.getSelectedItem() == "Tacos")
+        {    
+            customizePanel.setVisible(true);
+        
+        }
+    }//GEN-LAST:event_breakfastComboBoxActionPerformed
+
+    private void tacosComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tacosComboBoxActionPerformed
+        if(tacosComboBox.getSelectedItem() == "Grilled Chicken" || tacosComboBox.getSelectedItem() == "Grilled Beef" ||
+                tacosComboBox.getSelectedItem() == "Pastor" || tacosComboBox.getSelectedItem() == "Barbacoa")
+        {    
+            customizePanel.setVisible(true);
+        
+        }
+    }//GEN-LAST:event_tacosComboBoxActionPerformed
+
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
+        
+        drinkComboBox.setVisible(false);
+        breakfastComboBox.setVisible(false);
+        tacosComboBox.setVisible(false);
+        customizePanel.setVisible(false);
+        
+    }//GEN-LAST:event_addBtnActionPerformed
+
+      
     /**
      * @param args the command line arguments
      */
@@ -233,13 +325,17 @@ public class mainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBtn;
+    private javax.swing.JButton backBtn;
     private javax.swing.JComboBox<String> breakfastComboBox;
     private javax.swing.JLabel breakfastLbl;
+    private javax.swing.JPanel customizePanel;
     private javax.swing.JComboBox<String> drinkComboBox;
     private javax.swing.JLabel drinkLbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel menuPanel;
     private javax.swing.JComboBox<String> tacosComboBox;
     private javax.swing.JLabel tacosLbl;
     // End of variables declaration//GEN-END:variables
