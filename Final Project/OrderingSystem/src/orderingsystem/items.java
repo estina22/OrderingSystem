@@ -12,14 +12,12 @@ package orderingsystem;
 public class items {
     
     private String name;
-    private String description;
     private double price;
     
     //constructor
-    public items(String name, String description, double price)
+    public items(String name, double price)
     {
         this.name = name;
-        this.description = description;
         this.price = price;
     }
     
@@ -31,15 +29,6 @@ public class items {
     public void setName(String name)
     {
         this.name = name;
-    }
-    
-    public void setDescription(String description)
-    {
-        this.description = description;
-    }
-    public String getDescription()
-    {
-        return description;
     }
     
     public void setPrice(double price)

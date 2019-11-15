@@ -26,7 +26,7 @@ public class mainMenu extends javax.swing.JFrame {
         drinkComboBox.setVisible(false);
         breakfastComboBox.setVisible(false);
         tacosComboBox.setVisible(false);
-        customizePanel.setVisible(false);
+        breakfastPanel.setVisible(false);
        
        
     }
@@ -53,9 +53,18 @@ public class mainMenu extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         addBtn = new javax.swing.JButton();
         backBtn = new javax.swing.JButton();
+        breakfastPanel = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        bFirstTop = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        bSecTop = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        bStyle = new javax.swing.JComboBox<>();
         checkoutPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         payBtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        checkoutTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,7 +93,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
 
-        breakfastComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Burrito", "Tacos" }));
+        breakfastComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Breakfast Burrito", "Breakfast Tacos" }));
         breakfastComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 breakfastComboBoxActionPerformed(evt);
@@ -151,29 +160,89 @@ public class mainMenu extends javax.swing.JFrame {
 
         backBtn.setText("Reset");
 
+        jLabel5.setText("First topping: ");
+
+        bFirstTop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bacon", "Black beans", "Refried beans", "Chorizo", "Jalapeño", "Potato", "Vegan Chorizo", "Grilled Onions", " ", " " }));
+
+        jLabel6.setText("Second Topping:");
+
+        bSecTop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bacon", "Black beans", "Refried beans", "Chorizo", "Jalapeño", "Potato", "Vegan Chorizo", "Grilled Onions" }));
+
+        jLabel7.setText("Tortilla Style:");
+
+        bStyle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flour", "Spinach", "Corn" }));
+
+        javax.swing.GroupLayout breakfastPanelLayout = new javax.swing.GroupLayout(breakfastPanel);
+        breakfastPanel.setLayout(breakfastPanelLayout);
+        breakfastPanelLayout.setHorizontalGroup(
+            breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(breakfastPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel7)
+                        .addComponent(jLabel5)))
+                .addGap(44, 44, 44)
+                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(bFirstTop, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bSecTop, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bStyle, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+        breakfastPanelLayout.setVerticalGroup(
+            breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, breakfastPanelLayout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, breakfastPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, breakfastPanelLayout.createSequentialGroup()
+                        .addComponent(bStyle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bFirstTop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bSecTop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
+        );
+
         javax.swing.GroupLayout customizePanelLayout = new javax.swing.GroupLayout(customizePanel);
         customizePanel.setLayout(customizePanelLayout);
         customizePanelLayout.setHorizontalGroup(
             customizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, customizePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(breakfastPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
             .addGroup(customizePanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(customizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(backBtn)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(addBtn)
-                .addGap(42, 42, 42))
+                .addGroup(customizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(customizePanelLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel3))
+                    .addGroup(customizePanelLayout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(backBtn)
+                        .addGap(43, 43, 43)
+                        .addComponent(addBtn)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         customizePanelLayout.setVerticalGroup(
             customizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(customizePanelLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(breakfastPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(customizePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addBtn)
-                    .addComponent(backBtn))
-                .addGap(29, 29, 29))
+                    .addComponent(backBtn)
+                    .addComponent(addBtn))
+                .addGap(51, 51, 51))
         );
 
         jLabel4.setText("Review Order");
@@ -185,6 +254,11 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
 
+        checkoutTextArea.setEditable(false);
+        checkoutTextArea.setColumns(20);
+        checkoutTextArea.setRows(5);
+        jScrollPane1.setViewportView(checkoutTextArea);
+
         javax.swing.GroupLayout checkoutPanelLayout = new javax.swing.GroupLayout(checkoutPanel);
         checkoutPanel.setLayout(checkoutPanelLayout);
         checkoutPanelLayout.setHorizontalGroup(
@@ -193,19 +267,24 @@ public class mainMenu extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(checkoutPanelLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkoutPanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(payBtn)
-                .addGap(15, 15, 15))
+                .addGap(14, 14, 14))
         );
         checkoutPanelLayout.setVerticalGroup(
             checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(checkoutPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(payBtn)
-                .addGap(20, 20, 20))
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -223,9 +302,9 @@ public class mainMenu extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(36, 36, 36)
-                .addComponent(customizePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(checkoutPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(customizePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(checkoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -270,7 +349,7 @@ public class mainMenu extends javax.swing.JFrame {
         if(drinkComboBox.getSelectedItem() == "Horchata" || drinkComboBox.getSelectedItem() == "Jamaica" ||
                 drinkComboBox.getSelectedItem() == "Sprite" || drinkComboBox.getSelectedItem() == "Coca-Cola")
         {    
-            customizePanel.setVisible(true);
+            //breakfastPanel.setVisible(true);
         }
         
     }//GEN-LAST:event_drinkComboBoxActionPerformed
@@ -307,7 +386,7 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(breakfastComboBox.getSelectedItem() == "Burrito" || breakfastComboBox.getSelectedItem() == "Tacos")
         {    
-            customizePanel.setVisible(true);
+            breakfastPanel.setVisible(true);
         
         }
     }//GEN-LAST:event_breakfastComboBoxActionPerformed
@@ -316,7 +395,7 @@ public class mainMenu extends javax.swing.JFrame {
         if(tacosComboBox.getSelectedItem() == "Grilled Chicken" || tacosComboBox.getSelectedItem() == "Grilled Beef" ||
                 tacosComboBox.getSelectedItem() == "Pastor" || tacosComboBox.getSelectedItem() == "Barbacoa")
         {    
-            customizePanel.setVisible(true);
+            //breakfastPanel.setVisible(true);
         
         }
     }//GEN-LAST:event_tacosComboBoxActionPerformed
@@ -328,9 +407,10 @@ public class mainMenu extends javax.swing.JFrame {
         drinkComboBox.setVisible(false);
         breakfastComboBox.setVisible(false);
         tacosComboBox.setVisible(false);
-        customizePanel.setVisible(false);
+        breakfastPanel.setVisible(false);
         
-        
+        checkoutTextArea.setText(breakfastComboBox.getSelectedItem().toString()+"\n\t Tortilla Style: "+bStyle.getSelectedItem().toString()+ 
+                                    "\n\t First Topping" + bFirstTop.getSelectedItem().toString() + "\n\t Second Topping: " + bSecTop.getSelectedItem().toString());
         
     }//GEN-LAST:event_addBtnActionPerformed
 
@@ -376,10 +456,15 @@ public class mainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
+    private javax.swing.JComboBox<String> bFirstTop;
+    private javax.swing.JComboBox<String> bSecTop;
+    private javax.swing.JComboBox<String> bStyle;
     private javax.swing.JButton backBtn;
     private javax.swing.JComboBox<String> breakfastComboBox;
     private javax.swing.JLabel breakfastLbl;
+    private javax.swing.JPanel breakfastPanel;
     private javax.swing.JPanel checkoutPanel;
+    private javax.swing.JTextArea checkoutTextArea;
     private javax.swing.JPanel customizePanel;
     private javax.swing.JComboBox<String> drinkComboBox;
     private javax.swing.JLabel drinkLbl;
@@ -387,6 +472,10 @@ public class mainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton payBtn;
     private javax.swing.JComboBox<String> tacosComboBox;
