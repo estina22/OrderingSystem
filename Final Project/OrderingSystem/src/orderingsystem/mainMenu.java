@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package orderingsystem;
+import java.awt.CardLayout;
 import javax.swing.*;
 import java.util.*;
 import java.io.*;
@@ -20,14 +21,16 @@ public class mainMenu extends javax.swing.JFrame {
     /**
      * Creates new form mainMenu
      */
+    CardLayout cardLayout;
+    
     public mainMenu() {
         initComponents();
         
-        drinkComboBox.setVisible(false);
+        cardLayout = (CardLayout)(cardPanel.getLayout());
+        
+        drinksComboBox.setVisible(false);
         breakfastComboBox.setVisible(false);
         tacosComboBox.setVisible(false);
-        breakfastPanel.setVisible(false);
-        //tacosPanel.setVisible(false);
        
     }
 
@@ -40,261 +43,51 @@ public class mainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuPanel = new javax.swing.JPanel();
-        drinkLbl = new javax.swing.JLabel();
-        drinkComboBox = new javax.swing.JComboBox<>();
-        breakfastLbl = new javax.swing.JLabel();
-        breakfastComboBox = new javax.swing.JComboBox<>();
-        tacosLbl = new javax.swing.JLabel();
-        tacosComboBox = new javax.swing.JComboBox<>();
-        logoPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        addBtn = new javax.swing.JButton();
-        backBtn = new javax.swing.JButton();
-        customizedLPanel = new javax.swing.JLayeredPane();
-        breakfastPanel = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        bSecTop = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        bFirstTop = new javax.swing.JComboBox<>();
-        jPanel3 = new javax.swing.JPanel();
-        bStyle = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
         checkoutPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         payBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         checkoutTextArea = new javax.swing.JTextArea();
-        jLabel9 = new javax.swing.JLabel();
-        bStyle1 = new javax.swing.JComboBox<>();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        leftPanel = new javax.swing.JPanel();
+        breakfastLbl = new javax.swing.JLabel();
+        tacosLbl = new javax.swing.JLabel();
+        drinkLbl = new javax.swing.JLabel();
+        breakfastComboBox = new javax.swing.JComboBox<>();
+        tacosComboBox = new javax.swing.JComboBox<>();
+        drinksComboBox = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        cardPanel = new javax.swing.JPanel();
+        homePanel = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        breakfastPanel = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        bStyle = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        bSecTop = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        bFirstTop = new javax.swing.JComboBox<>();
+        breakfastItem = new javax.swing.JLabel();
+        bfBtn = new javax.swing.JButton();
+        tacosPanel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        tStyle = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        noOnion = new javax.swing.JCheckBox();
+        noCilantro = new javax.swing.JCheckBox();
+        noCheese = new javax.swing.JCheckBox();
+        jLabel12 = new javax.swing.JLabel();
+        tacosBtn = new javax.swing.JButton();
+        tacosItem = new javax.swing.JLabel();
+        drinksPanel = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        drinkItem = new javax.swing.JLabel();
+        drinksBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        drinkLbl.setText("Drinks");
-        drinkLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                drinkLblMouseClicked(evt);
-            }
-        });
-
-        drinkComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Horchata", "Jamaica", "Sprite", "Coca-Cola" }));
-        drinkComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                drinkComboBoxActionPerformed(evt);
-            }
-        });
-
-        breakfastLbl.setText("Breakfast");
-        breakfastLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                breakfastLblMouseClicked(evt);
-            }
-        });
-
-        breakfastComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Breakfast Burrito", "Breakfast Tacos" }));
-        breakfastComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                breakfastComboBoxActionPerformed(evt);
-            }
-        });
-
-        tacosLbl.setText("Tacos");
-        tacosLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tacosLblMouseClicked(evt);
-            }
-        });
-
-        tacosComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grilled Beef", "Grilled Chicken", "Pastor ", "Barbacoa" }));
-        tacosComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tacosComboBoxActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
-        menuPanel.setLayout(menuPanelLayout);
-        menuPanelLayout.setHorizontalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(menuPanelLayout.createSequentialGroup()
-                                .addComponent(breakfastLbl)
-                                .addGap(28, 28, 28))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, menuPanelLayout.createSequentialGroup()
-                                .addComponent(drinkLbl)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(breakfastComboBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(drinkComboBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(menuPanelLayout.createSequentialGroup()
-                        .addComponent(tacosLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(tacosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30))
-        );
-        menuPanelLayout.setVerticalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(breakfastComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(breakfastLbl))
-                .addGap(45, 45, 45)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tacosLbl)
-                    .addComponent(tacosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(drinkLbl)
-                    .addComponent(drinkComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-
-        jLabel1.setText("Dia de los Tacos");
-
-        jLabel2.setText("****insert logo");
-
-        javax.swing.GroupLayout logoPanelLayout = new javax.swing.GroupLayout(logoPanel);
-        logoPanel.setLayout(logoPanelLayout);
-        logoPanelLayout.setHorizontalGroup(
-            logoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(logoPanelLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(54, 54, 54))
-            .addGroup(logoPanelLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        logoPanelLayout.setVerticalGroup(
-            logoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(logoPanelLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
-        jCheckBox1.setText("No Cojita Cheese");
-
-        addBtn.setText("Add to Cart");
-        addBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBtnActionPerformed(evt);
-            }
-        });
-
-        backBtn.setText("Reset");
-
-        jLabel7.setText("Tortilla Style:");
-
-        jLabel6.setText("Second Topping:");
-
-        bSecTop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bacon", "Black beans", "Refried beans", "Chorizo", "Jalapeño", "Potato", "Vegan Chorizo", "Grilled Onions" }));
-
-        jLabel5.setText("First topping: ");
-
-        bFirstTop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bacon", "Black beans", "Refried beans", "Chorizo", "Jalapeño", "Potato", "Vegan Chorizo", "Grilled Onions", " ", " " }));
-
-        bStyle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flour", "Spinach", "Corn" }));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(bStyle, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bStyle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout breakfastPanelLayout = new javax.swing.GroupLayout(breakfastPanel);
-        breakfastPanel.setLayout(breakfastPanelLayout);
-        breakfastPanelLayout.setHorizontalGroup(
-            breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(breakfastPanelLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(breakfastPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, breakfastPanelLayout.createSequentialGroup()
-                        .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bFirstTop, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(breakfastPanelLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(jLabel5)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                        .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(bSecTop, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24))))
-        );
-        breakfastPanelLayout.setVerticalGroup(
-            breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(breakfastPanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addGap(29, 29, 29)
-                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bFirstTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bSecTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-
-        jLabel3.setText("Customize Order");
-
-        customizedLPanel.setLayer(breakfastPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        customizedLPanel.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout customizedLPanelLayout = new javax.swing.GroupLayout(customizedLPanel);
-        customizedLPanel.setLayout(customizedLPanelLayout);
-        customizedLPanelLayout.setHorizontalGroup(
-            customizedLPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(customizedLPanelLayout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(jLabel3)
-                .addContainerGap(402, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, customizedLPanelLayout.createSequentialGroup()
-                .addGap(0, 148, Short.MAX_VALUE)
-                .addComponent(breakfastPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(123, 123, 123))
-        );
-        customizedLPanelLayout.setVerticalGroup(
-            customizedLPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(customizedLPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(31, 31, 31)
-                .addComponent(breakfastPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
-        );
+        checkoutPanel.setPreferredSize(new java.awt.Dimension(344, 500));
 
         jLabel4.setText("Review Order");
 
@@ -314,124 +107,371 @@ public class mainMenu extends javax.swing.JFrame {
         checkoutPanel.setLayout(checkoutPanelLayout);
         checkoutPanelLayout.setHorizontalGroup(
             checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkoutPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(payBtn)
-                .addGap(14, 14, 14))
             .addGroup(checkoutPanelLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, checkoutPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
                     .addGroup(checkoutPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addGap(109, 109, 109)
+                        .addComponent(payBtn)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(checkoutPanelLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         checkoutPanelLayout.setVerticalGroup(
             checkoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(checkoutPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+                .addGap(15, 15, 15)
                 .addComponent(payBtn)
-                .addGap(14, 14, 14))
+                .addContainerGap())
         );
 
-        jLabel9.setText("Pick it off:");
+        jSplitPane1.setPreferredSize(new java.awt.Dimension(850, 500));
 
-        bStyle1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flour", "Spinach", "Corn" }));
+        leftPanel.setBackground(new java.awt.Color(153, 204, 255));
+        leftPanel.setPreferredSize(new java.awt.Dimension(200, 500));
 
-        jCheckBox3.setText("No Onion");
-
-        jCheckBox2.setText("No Cilantro");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+        breakfastLbl.setText("Breakfast");
+        breakfastLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                breakfastLblMouseClicked(evt);
             }
         });
 
+        tacosLbl.setText("Tacos");
+        tacosLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tacosLblMouseClicked(evt);
+            }
+        });
+
+        drinkLbl.setText("Drinks");
+        drinkLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                drinkLblMouseClicked(evt);
+            }
+        });
+
+        breakfastComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Breakfast Burrito", "Breakfast Taco" }));
+        breakfastComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                breakfastComboBoxActionPerformed(evt);
+            }
+        });
+
+        tacosComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grilled Beef", "Grilled Chicken", "Pastor", "Barbacoa" }));
+        tacosComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tacosComboBoxActionPerformed(evt);
+            }
+        });
+
+        drinksComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Horchata", "Jamaica", "Sprite", "Coca-Cola" }));
+        drinksComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drinksComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("****insert logo");
+
+        jLabel1.setText("Dia de los Tacos");
+
+        javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
+        leftPanel.setLayout(leftPanelLayout);
+        leftPanelLayout.setHorizontalGroup(
+            leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leftPanelLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tacosLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(tacosComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(breakfastComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(drinksComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(breakfastLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(drinkLbl))
+                .addGap(17, 17, 17))
+        );
+        leftPanelLayout.setVerticalGroup(
+            leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(leftPanelLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addGap(34, 34, 34)
+                .addComponent(jLabel2)
+                .addGap(58, 58, 58)
+                .addComponent(breakfastLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(breakfastComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(tacosLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tacosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(drinkLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(drinksComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setLeftComponent(leftPanel);
+
+        cardPanel.setBackground(new java.awt.Color(204, 255, 204));
+        cardPanel.setLayout(new java.awt.CardLayout());
+
+        jLabel10.setText("home screen first panel, add temporary background");
+
+        javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
+        homePanel.setLayout(homePanelLayout);
+        homePanelLayout.setHorizontalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                .addContainerGap(163, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(148, 148, 148))
+        );
+        homePanelLayout.setVerticalGroup(
+            homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homePanelLayout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(jLabel10)
+                .addContainerGap(290, Short.MAX_VALUE))
+        );
+
+        cardPanel.add(homePanel, "homePanel");
+
+        breakfastPanel.setBackground(new java.awt.Color(204, 204, 255));
+
+        jLabel7.setText("Tortilla Style:");
+
+        bStyle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flour", "Spinach", "Corn" }));
+
+        jLabel5.setText("First topping: ");
+
+        bSecTop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bacon", "Black beans", "Refried beans", "Chorizo", "Jalapeño", "Potato", "Vegan Chorizo", "Grilled Onions" }));
+
+        jLabel6.setText("Second Topping:");
+
+        bFirstTop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bacon", "Black beans", "Refried beans", "Chorizo", "Jalapeño", "Potato", "Vegan Chorizo", "Grilled Onions", " ", " " }));
+
+        breakfastItem.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 255), 2, true));
+
+        bfBtn.setText("Add to Cart");
+        bfBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bfBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout breakfastPanelLayout = new javax.swing.GroupLayout(breakfastPanel);
+        breakfastPanel.setLayout(breakfastPanelLayout);
+        breakfastPanelLayout.setHorizontalGroup(
+            breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, breakfastPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(bfBtn)
+                .addGap(189, 189, 189))
+            .addGroup(breakfastPanelLayout.createSequentialGroup()
+                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(breakfastPanelLayout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bStyle, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(breakfastPanelLayout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bSecTop, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(122, 122, 122)
+                        .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(bFirstTop, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(breakfastPanelLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(breakfastItem, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(218, Short.MAX_VALUE))
+        );
+        breakfastPanelLayout.setVerticalGroup(
+            breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(breakfastPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(breakfastItem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94)
+                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(bStyle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(110, 110, 110)
+                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(breakfastPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bSecTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bFirstTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(bfBtn)
+                .addGap(61, 61, 61))
+        );
+
+        cardPanel.add(breakfastPanel, "breakfastPanel");
+
+        tacosPanel.setBackground(new java.awt.Color(204, 255, 204));
+        tacosPanel.setPreferredSize(new java.awt.Dimension(637, 500));
+
         jLabel8.setText("Tortilla Style:");
+
+        tStyle.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flour", "Spinach", "Corn" }));
+
+        jLabel9.setText("Pick it off:");
+
+        noOnion.setText("No Onion");
+
+        noCilantro.setText("No Cilantro");
+
+        noCheese.setText("No Cojita Cheese");
+
+        jLabel12.setText("Tacos");
+
+        tacosBtn.setText("Add to Cart");
+        tacosBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tacosBtnActionPerformed(evt);
+            }
+        });
+
+        tacosItem.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 255, 204), 2, true));
+
+        javax.swing.GroupLayout tacosPanelLayout = new javax.swing.GroupLayout(tacosPanel);
+        tacosPanel.setLayout(tacosPanelLayout);
+        tacosPanelLayout.setHorizontalGroup(
+            tacosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tacosPanelLayout.createSequentialGroup()
+                .addGroup(tacosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(tacosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(tacosPanelLayout.createSequentialGroup()
+                            .addGap(109, 109, 109)
+                            .addGroup(tacosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tacosBtn)
+                                .addGroup(tacosPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel8)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tStyle, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(106, 106, 106))))
+                        .addGroup(tacosPanelLayout.createSequentialGroup()
+                            .addGap(148, 148, 148)
+                            .addComponent(jLabel9))
+                        .addGroup(tacosPanelLayout.createSequentialGroup()
+                            .addGap(216, 216, 216)
+                            .addComponent(noOnion))
+                        .addGroup(tacosPanelLayout.createSequentialGroup()
+                            .addGap(190, 190, 190)
+                            .addComponent(noCheese)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(noCilantro)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tacosPanelLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(tacosItem, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel12)))
+                .addContainerGap(197, Short.MAX_VALUE))
+        );
+        tacosPanelLayout.setVerticalGroup(
+            tacosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tacosPanelLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(tacosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(tacosItem, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(tacosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tStyle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(84, 84, 84)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tacosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(noCilantro)
+                    .addComponent(noCheese))
+                .addGap(18, 18, 18)
+                .addComponent(noOnion)
+                .addGap(59, 59, 59)
+                .addComponent(tacosBtn)
+                .addContainerGap(102, Short.MAX_VALUE))
+        );
+
+        cardPanel.add(tacosPanel, "tacosPanel");
+
+        drinksPanel.setBackground(new java.awt.Color(255, 204, 204));
+
+        jLabel11.setText("Drink:");
+
+        drinkItem.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 204), 2, true));
+
+        drinksBtn.setText("Add to Cart");
+        drinksBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drinksBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout drinksPanelLayout = new javax.swing.GroupLayout(drinksPanel);
+        drinksPanel.setLayout(drinksPanelLayout);
+        drinksPanelLayout.setHorizontalGroup(
+            drinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(drinksPanelLayout.createSequentialGroup()
+                .addGap(147, 147, 147)
+                .addComponent(jLabel11)
+                .addGap(18, 18, 18)
+                .addGroup(drinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(drinksBtn)
+                    .addComponent(drinkItem, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(294, Short.MAX_VALUE))
+        );
+        drinksPanelLayout.setVerticalGroup(
+            drinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(drinksPanelLayout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addGroup(drinksPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(drinkItem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(66, 66, 66)
+                .addComponent(drinksBtn)
+                .addContainerGap(263, Short.MAX_VALUE))
+        );
+
+        cardPanel.add(drinksPanel, "drinksPanel");
+
+        jSplitPane1.setRightComponent(cardPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(logoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(customizedLPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(checkoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(backBtn)
-                    .addComponent(jCheckBox1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addBtn, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jCheckBox3, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jCheckBox2)
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jLabel8)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bStyle1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(logoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(124, 124, 124))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(customizedLPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jCheckBox3)
-                                .addComponent(backBtn))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(addBtn)
-                                .addComponent(jCheckBox1)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(bStyle1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(jCheckBox2)))
-                .addGap(50, 50, 50))
             .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(checkoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkoutPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -439,98 +479,165 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void drinkLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_drinkLblMouseClicked
         // Visibility of menu items, double-click: hides combobox
-        if (drinkComboBox.isVisible())
-            drinkComboBox.setVisible(false);
+        if (drinksComboBox.isVisible())
+        {
+            drinksComboBox.setVisible(false);
+            cardLayout.show(cardPanel, "homePanel");
+        }
         else if(breakfastComboBox.isVisible() || tacosComboBox.isVisible())
         {
-          drinkComboBox.setVisible(true); 
+          drinksComboBox.setVisible(true); 
           breakfastComboBox.setVisible(false);
           tacosComboBox.setVisible(false);
+          cardLayout.show(cardPanel, "homePanel");
         }
         else
-            drinkComboBox.setVisible(true);
+            drinksComboBox.setVisible(true);
     }//GEN-LAST:event_drinkLblMouseClicked
 
-    private void drinkComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drinkComboBoxActionPerformed
-        // 
-        if(drinkComboBox.getSelectedItem() == "Horchata" || drinkComboBox.getSelectedItem() == "Jamaica" ||
-                drinkComboBox.getSelectedItem() == "Sprite" || drinkComboBox.getSelectedItem() == "Coca-Cola")
-        {    
-            //breakfastPanel.setVisible(true);
-        }
+    private void drinksComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drinksComboBoxActionPerformed
+
+        cardLayout.show(cardPanel, "drinksPanel");
+        if(drinksComboBox.getSelectedItem() == "Horchata")
+            drinkItem.setText("Horchata");
+        else if(drinksComboBox.getSelectedItem() == "Jamaica")
+            drinkItem.setText("Jamaica");
+        else if(drinksComboBox.getSelectedItem() == "Sprite")
+            drinkItem.setText("Sprite");
+        else if(drinksComboBox.getSelectedItem() == "Coca-Cola")
+            drinkItem.setText("Coca-Cola");
         
-    }//GEN-LAST:event_drinkComboBoxActionPerformed
+    }//GEN-LAST:event_drinksComboBoxActionPerformed
 
     private void breakfastLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_breakfastLblMouseClicked
-        // TODO add your handling code here:
+        
+        //when it's clicked
         if (breakfastComboBox.isVisible())
-            breakfastComboBox.setVisible(false);
-        else if(drinkComboBox.isVisible() || tacosComboBox.isVisible())
         {
-          drinkComboBox.setVisible(false); 
-          breakfastComboBox.setVisible(true);
+            breakfastComboBox.setVisible(false); //hides menu items
+            cardLayout.show(cardPanel, "homePanel"); //hides breakfast panel
+        }
+        else if(drinksComboBox.isVisible() || tacosComboBox.isVisible())
+        { 
+            //sets breakfast menu items ONLY visible
+          drinksComboBox.setVisible(false); 
+          breakfastComboBox.setVisible(true); 
           tacosComboBox.setVisible(false);
+          cardLayout.show(cardPanel, "homePanel");
         }
         else
-            breakfastComboBox.setVisible(true); 
+            breakfastComboBox.setVisible(true); //toggle between menu type and item
     }//GEN-LAST:event_breakfastLblMouseClicked
 
     private void tacosLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tacosLblMouseClicked
         // TODO add your handling code here:
         if (tacosComboBox.isVisible())
-            tacosComboBox.setVisible(false);
-        else if(drinkComboBox.isVisible() || breakfastComboBox.isVisible())
         {
-          drinkComboBox.setVisible(false); 
+            tacosComboBox.setVisible(false);
+            cardLayout.show(cardPanel, "homePanel");
+        }
+        else if(drinksComboBox.isVisible() || breakfastComboBox.isVisible())
+        {
+          drinksComboBox.setVisible(false); 
           breakfastComboBox.setVisible(false);
           tacosComboBox.setVisible(true);
+          cardLayout.show(cardPanel, "homePanel");
         }
         else
             tacosComboBox.setVisible(true);  
     }//GEN-LAST:event_tacosLblMouseClicked
 
-    private void breakfastComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breakfastComboBoxActionPerformed
-        // TODO add your handling code here:
-        if(breakfastComboBox.getSelectedItem() == "Breakfast Burrito" || 
-                breakfastComboBox.getSelectedItem() == "Breakfast Tacos")
-        {    
-            breakfastPanel.setVisible(true);
-            //tacosPanel.setVisible(false);
-        
-        }
-    }//GEN-LAST:event_breakfastComboBoxActionPerformed
-
     private void tacosComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tacosComboBoxActionPerformed
-        if(tacosComboBox.getSelectedItem() == "Grilled Chicken" || tacosComboBox.getSelectedItem() == "Grilled Beef" ||
-                tacosComboBox.getSelectedItem() == "Pastor" || tacosComboBox.getSelectedItem() == "Barbacoa")
-        {    
-            //tacosPanel.setVisible(true);
-            breakfastPanel.setVisible(false);
+        cardLayout.show(cardPanel, "tacosPanel");
         
-        }
+        if(tacosComboBox.getSelectedItem() == "Grilled Beef")
+            tacosItem.setText("Grilled Beef");
+        else if(tacosComboBox.getSelectedItem() == "Grilled Chicken")
+            tacosItem.setText("Grilled Chicken");
+        else if(tacosComboBox.getSelectedItem() == "Pastor")
+            tacosItem.setText("Pastor");
+        else if(tacosComboBox.getSelectedItem() == "Barbacoa")
+            tacosItem.setText("Barbacoa");
     }//GEN-LAST:event_tacosComboBoxActionPerformed
 
     private void payBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_payBtnActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
-    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
-        // TODO add your handling code here:
+    private void bfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bfBtnActionPerformed
+                //BREAKFAST: writes to Review Order Panel
+        String type = breakfastItem.getText();
+        String style = bStyle.getSelectedItem().toString();
+        String firstTop = bFirstTop.getSelectedItem().toString();
+        String secTop = bSecTop.getSelectedItem().toString();
 
         //the following resets the window
-        drinkComboBox.setVisible(false);
+        drinksComboBox.setVisible(false);
         breakfastComboBox.setVisible(false);
         tacosComboBox.setVisible(false);
-        breakfastPanel.setVisible(false);
+        cardLayout.show(cardPanel, "homePanel"); //hides any of the 3 types of panel
 
-        checkoutTextArea.setText(breakfastComboBox.getSelectedItem().toString()+"\n\t Tortilla Style: "+bStyle.getSelectedItem().toString()+
-            "\n\t First Topping" + bFirstTop.getSelectedItem().toString() + "\n\t Second Topping: " + bSecTop.getSelectedItem().toString());
+        checkoutTextArea.append(type);
+        checkoutTextArea.append("\n   > Tortilla Style: " + style +
+            "\n   > First Topping: " + firstTop + "\n   > Second Topping: " + secTop + "\n");
 
-    }//GEN-LAST:event_addBtnActionPerformed
+    }//GEN-LAST:event_bfBtnActionPerformed
+
+    private void breakfastComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breakfastComboBoxActionPerformed
+        
+        cardLayout.show(cardPanel, "breakfastPanel");
+        
+        if(breakfastComboBox.getSelectedItem() == "Breakfast Burrito")
+            breakfastItem.setText("Breakfast Burrito");
+        else if(breakfastComboBox.getSelectedItem() == "Breakfast Taco")
+            breakfastItem.setText("Breakfast Taco");
+    }//GEN-LAST:event_breakfastComboBoxActionPerformed
+
+    private void tacosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tacosBtnActionPerformed
+        //TACOS: writes to Review Order Panel
+        
+        String type = tacosItem.getText();
+        String editStyle = tStyle.getSelectedItem().toString();
+        
+        //-------THIS STILL NEEDS WORK-------------------------
+        List<String> toppings = new ArrayList<String>(); 
+        if(noCheese.isSelected())
+            toppings.add(" Cheese ");
+        else if(noCilantro.isSelected())
+            toppings.add(" Cilantro ");
+        else if(noOnion.isSelected())
+            toppings.add(" Onions ");
+        //-------------------------------------------------------
+        
+        //appends to text area
+        checkoutTextArea.append(type + " Tacos \n");         
+        checkoutTextArea.append("  > Tortilla Style: "+ editStyle +
+            "\n   > Pick it off:" + toppings + "\n");
+
+        //the following resets the window
+        drinksComboBox.setVisible(false);
+        breakfastComboBox.setVisible(false);
+        tacosComboBox.setVisible(false);
+        
+        
+        
+        cardLayout.show(cardPanel, "homePanel"); //hides any of the 3 types of panel
+        
+    }//GEN-LAST:event_tacosBtnActionPerformed
+
+    private void drinksBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drinksBtnActionPerformed
+        //TACOS: writes to Review Order Panel
+        
+        String text =  drinkItem.getText();
+        
+        //the following resets the window
+        drinksComboBox.setVisible(false);
+        breakfastComboBox.setVisible(false);
+        tacosComboBox.setVisible(false);
+        cardLayout.show(cardPanel, "homePanel"); //hides any of the 3 types of panel
+
+        checkoutTextArea.append("\n Drink: " + text + "\n");
+    }//GEN-LAST:event_drinksBtnActionPerformed
 
       
     /**
@@ -569,38 +676,46 @@ public class mainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addBtn;
     private javax.swing.JComboBox<String> bFirstTop;
     private javax.swing.JComboBox<String> bSecTop;
     private javax.swing.JComboBox<String> bStyle;
-    private javax.swing.JComboBox<String> bStyle1;
-    private javax.swing.JButton backBtn;
+    private javax.swing.JButton bfBtn;
     private javax.swing.JComboBox<String> breakfastComboBox;
+    private javax.swing.JLabel breakfastItem;
     private javax.swing.JLabel breakfastLbl;
     private javax.swing.JPanel breakfastPanel;
+    private javax.swing.JPanel cardPanel;
     private javax.swing.JPanel checkoutPanel;
     private javax.swing.JTextArea checkoutTextArea;
-    private javax.swing.JLayeredPane customizedLPanel;
-    private javax.swing.JComboBox<String> drinkComboBox;
+    private javax.swing.JLabel drinkItem;
     private javax.swing.JLabel drinkLbl;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JButton drinksBtn;
+    private javax.swing.JComboBox<String> drinksComboBox;
+    private javax.swing.JPanel drinksPanel;
+    private javax.swing.JPanel homePanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel logoPanel;
-    private javax.swing.JPanel menuPanel;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JPanel leftPanel;
+    private javax.swing.JCheckBox noCheese;
+    private javax.swing.JCheckBox noCilantro;
+    private javax.swing.JCheckBox noOnion;
     private javax.swing.JButton payBtn;
+    private javax.swing.JComboBox<String> tStyle;
+    private javax.swing.JButton tacosBtn;
     private javax.swing.JComboBox<String> tacosComboBox;
+    private javax.swing.JLabel tacosItem;
     private javax.swing.JLabel tacosLbl;
+    private javax.swing.JPanel tacosPanel;
     // End of variables declaration//GEN-END:variables
 }
