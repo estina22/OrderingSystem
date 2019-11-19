@@ -5,22 +5,29 @@
  */
 package orderingsystem;
 
+import java.io.*;
+
 /**
  *
  * @author eslemus
  */
-public class items {
+public class items implements Serializable{
     
     private String name;
     private double price;
-    
-    //constructor
-    public items(String name, double price)
+    public boolean equals(items item)
     {
-        this.name = name;
-        this.price = price;
+        if(this.price==item.price && this.name.equals(item.name))
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
+    //constructor
+ 
     //the following are setters and getters
     public String getName()
     {
