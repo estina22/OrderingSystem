@@ -31,8 +31,8 @@ public class orderNow extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +53,9 @@ public class orderNow extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 153));
+        jMenu1.add(jSeparator1);
+
         jMenuItem2.setBackground(new java.awt.Color(204, 204, 204));
         jMenuItem2.setFont(new java.awt.Font("American Typewriter", 0, 18)); // NOI18N
         jMenuItem2.setText("Montrose");
@@ -62,9 +65,6 @@ public class orderNow extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem2);
-
-        jSeparator1.setForeground(new java.awt.Color(255, 255, 153));
-        jMenu1.add(jSeparator1);
 
         jMenuBar1.add(jMenu1);
 

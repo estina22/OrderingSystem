@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,6 +22,7 @@ public class Billing {
     private double subtotal;
     private double tax = .0625; //sales tax = 6.25%
     private double calc;
+    DecimalFormat formatter = new DecimalFormat("#,###.00");
 
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
@@ -28,15 +30,19 @@ public class Billing {
  
     String taxcalculate()
     {
+        String finaltax;
         calc = subtotal * tax;
-        return String.valueOf(calc);
+        finaltax= formatter.format(calc);
+        return finaltax;
     }
     
     String billcalculate()
     {
         double bill;
+        String total;
         bill = subtotal + calc;
-        return String.valueOf(bill);
+        total = formatter.format(bill);
+        return total;
     }
    
 }

@@ -841,10 +841,16 @@ public class mainMenu extends javax.swing.JFrame {
             try 
             {
                 PrintWriter out = new PrintWriter(new FileWriter("TestFile.txt"));
+                
+                //writes order
                 checkoutTextArea.write(out);
+                
+                //writes calculations from class
+                out.write("\n \n ------------------Total----------------------\n");
                 out.write("Subtotal: $"+ printSubTotal + "\n");
-                out.write("Tax: $" +formatter.format(bill.taxcalculate()) + "\n");
-                out.write("Tax: $" +formatter.format(bill.billcalculate()) + "\n");
+                out.write("Tax: $" +bill.taxcalculate() + "\n");
+                out.write("Total: $" +bill.billcalculate() + "\n");
+                out.write("\n \n You order will be ready for pick-up soon!");
                 out.close();
                 JOptionPane.showMessageDialog(this, "Successful Order.");
 
